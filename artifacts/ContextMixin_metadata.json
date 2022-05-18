@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/OpenSeaNew.sol": "ContextMixin"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/OpenSeaNew.sol": {
+			"keccak256": "0x99d0b14cb2baf84c918e5f580edb6a8a0ed854e088ab1afbf5cbdb95a71f5bd1",
+			"urls": [
+				"bzz-raw://101f6393d9f922bbb8d371ac788f4533611128da759ce08f46d0330ad5669044",
+				"dweb:/ipfs/QmSSJ87ywQbEnhbFiWdAuQwDLobAGPeEwPh2FuH4opTEVz"
+			]
+		}
+	},
+	"version": 1
+}
