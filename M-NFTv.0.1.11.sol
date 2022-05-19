@@ -10,7 +10,7 @@ import "./ERC721/extensions/ERC721URIStorage_M.sol"; // changed import
 import "./ERC721/extensions/ERC721Burnable.sol";
 // import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract M_NFT is ERC721, ERC721URIStorage, Ownable { 
+contract M_NFT_v0_1_11 is ERC721, ERC721URIStorage, Ownable { 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 

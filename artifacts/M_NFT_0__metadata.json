@@ -607,7 +607,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"M-NFTv.0.1.11.sol": "M_NFT"
+			"M-NFTv.0.1.11.sol": "M_NFT_0_"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -670,11 +670,11 @@
 			]
 		},
 		"M-NFTv.0.1.11.sol": {
-			"keccak256": "0xe89bbf278a11a2d280ae0ac02a855075f3df8702d368a126685c6d283bfd9737",
+			"keccak256": "0x70ed8f94a4216dd770e1854efc6ac4478d5f6b14fdbb6dc797a2684f851a15f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://95354743f0249a6731c02798be06aabe6c700816c60038ffa237bb5a51ebdd3b",
-				"dweb:/ipfs/Qmc6ou3yaLWQhPSfjL1DgGT6gfY3MqjQDh2ReeYeAC6qUu"
+				"bzz-raw://0fa64693690cb5a1d91b1ae7e35f35af894e197ebdf01dbfe527a124f0c889e9",
+				"dweb:/ipfs/QmQHPeCWyc6vVhW61ZYDF3yFbAst7S4bnTwn4BHfphN3ts"
 			]
 		},
 		"utils/Address.sol": {
