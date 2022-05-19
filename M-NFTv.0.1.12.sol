@@ -1,6 +1,5 @@
-// contracts/GameItem.sol
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.7;
 
 // import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import './ERC721/ERC721.sol';
@@ -10,7 +9,7 @@ import "./ERC721/extensions/ERC721URIStorage_M.sol"; // changed import
 import "./ERC721/extensions/ERC721Burnable.sol";
 // import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract M_NFT_v0_1_11 is ERC721, ERC721URIStorage, Ownable { 
+contract M_NFT_v0_1_12 is ERC721, ERC721URIStorage, Ownable { 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
@@ -22,8 +21,10 @@ contract M_NFT_v0_1_11 is ERC721, ERC721URIStorage, Ownable {
     //     require(msg.sender == owner, NOT_CURRENT_OWNER);
     //     _;
     // }
+
     bool public approveMNF;
-    address public Sponsor;  
+    address public Sponsor; 
+    uint public price; 
     mapping(uint256 => address) private _tokenApprovalsMNFT;
 
     modifier sponsor() {
@@ -31,11 +32,9 @@ contract M_NFT_v0_1_11 is ERC721, ERC721URIStorage, Ownable {
         _;
     }
 
-    // constructor() ERC721("v.0.1.10", "M-NFT") {
     constructor(string memory name_, string memory symbol_) ERC721(name_, symbol_) {
         // owner = msg.sender;
     }
-
 
     function mint() public onlyOwner returns (uint256) {
         address owner = msg.sender;
@@ -48,29 +47,30 @@ contract M_NFT_v0_1_11 is ERC721, ERC721URIStorage, Ownable {
         //  _tokenIds.current();
     }
 
-
-
-    // function setTokenURI(uint256 tokenId, string memory tokenURI)
-    //     public
-    //     onlyOwner
-    // {
-    //     super._setTokenURI(tokenId, tokenURI);
-    // }
-
-    function create_M_NFT(uint256 tokenId, string memory tokenURI , string memory tokenURI_M, uint64 _timeStart, uint64 _timeStop)
+    function create_M_NFT(uint256 tokenId, string memory tokenURI, string memory tokenURI_M, uint64 _timeStart, uint64 _timeStop, uint64 _price)
         public
         onlyOwner
     {        
+        price = _price;
         super._setTokenURI_M(tokenId, tokenURI, tokenURI_M, _timeStart, _timeStop);
+    }
+
+    function changePrice(uint64 _price)
+        public
+        onlyOwner
+    {        
+        price = _price;
     }
 
     function change_M_NFT(uint256 tokenId, string memory tokenURI_M, uint64 timeStart, uint64 timeStop)
         public
+        payable
         // onlyOwner
         //sponsor
     {        
-        // super._setTokenURI_M(tokenId, tokenURI, tokenURI_M, _timeStart, _timeStop);
-        super._changeTokenURI_M( tokenId, tokenURI_M, timeStart, timeStop);
+        if (msg.value >= price) {
+            super._changeTokenURI_M( tokenId, tokenURI_M, timeStart, timeStop);
+        }            
     }
 
     function _burnTokenId(uint256 tokenId)
@@ -132,6 +132,13 @@ contract M_NFT_v0_1_11 is ERC721, ERC721URIStorage, Ownable {
         override(ERC721, ERC721URIStorage)
     {
         super._burn(tokenId);
+    }
+
+    function withdraw() public  payable  {
+        address owner = owner();
+        require(owner == msg.sender);
+        address payable to = payable(msg.sender);
+        to.transfer(address(this).balance);   
     }
 
     // function create_M_NFT(uint256 tokenId, string memory tokenURI , string memory tokenURI_M, uint64 _timeStart)

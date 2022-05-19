@@ -243,11 +243,6 @@
 						"internalType": "uint64",
 						"name": "timeStop",
 						"type": "uint64"
-					},
-					{
-						"internalType": "uint64",
-						"name": "_price",
-						"type": "uint64"
 					}
 				],
 				"name": "change_M_NFT",
@@ -650,7 +645,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"M-NFTv.0.1.11.sol": "M_NFT_v0_1_11"
+			"M-NFTv.0.1.12.sol": "M_NFT_v0_1_12"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -712,12 +707,12 @@
 				"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf"
 			]
 		},
-		"M-NFTv.0.1.11.sol": {
-			"keccak256": "0x08c033dee98126e4cb828b2ae1f949f4b765b210cf0ec9218483cc83571462d4",
+		"M-NFTv.0.1.12.sol": {
+			"keccak256": "0x530bbe6563812084b217e9188a028def7d7cf692197e067538bc71355e7b2dce",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4c7c0902270e5baf3855f360b9bf2998b37d13a4614669ea28877ff367b26b94",
-				"dweb:/ipfs/QmU9T2vYzw8kwhERsEkbmthPD8bybtK8a1gnjfw5mVTZtM"
+				"bzz-raw://7c5a08683a88cd119a39735b5019ec013800f2126f97f74e9df58b558131c36e",
+				"dweb:/ipfs/QmWL3XdS3v2HUXkZ9v9bd2fij1ZtPejR8K5HGn6o9rnCuU"
 			]
 		},
 		"utils/Address.sol": {
