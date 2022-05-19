@@ -1,7 +1,16 @@
 remixd -s . -u https://remix.ethereum.org
 
-
-= ERC 721
+./artifacts/M_NFT_v0_1_12.json
+  {
+    "data": {
+      "bytecode": {...
+      }
+    }
+    "abi": [...
+    ]
+  }
+  
+= modifed ERC 721
 
 [.readme-notice]
 NOTE: This document is better viewed at https://docs.openzeppelin.com/contracts/api/token/erc721
